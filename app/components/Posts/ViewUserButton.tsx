@@ -1,17 +1,23 @@
-'use client'
-import React from "react";
+'use client';
 
 interface ViewUserButtonProps {
-    userId: number
+  userId: number;
 }
 
-const ViewUserButton: React.FC<ViewUserButtonProps> = ({userId}) => {
-    const handleClick = () => alert(`user id: ${userId}`);
-    return (
-        <>
-        <button onClick={handleClick}>Lihat User</button>
-        </>
-    )
-}
+const ViewUserButton: React.FC<ViewUserButtonProps> = ({ userId }) => {
+  const handleClick = () => {
+    if (userId > 100) {
+      alert('GPU ini sahabat PLN!');
+    } else {
+      alert('GPU ini musuh PLN.');
+    }
+  };
+  
+  return (
+    <>
+      <button onClick={handleClick}>Apakah sahabat PLN? Klik disini</button>
+    </>
+  );
+};
 
-export default ViewUserButton
+export default ViewUserButton;
